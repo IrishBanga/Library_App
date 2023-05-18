@@ -1,0 +1,23 @@
+/*
+Name: Irish Banga
+Email: ibanga1@myseneca.ca
+Student ID: 112435227
+Completion Date: 2023-05-18
+
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*/
+
+REFLECTION
+
+The first part of the workshop was relatively easy as it was a simple re-arranging of code. But because I used namespaces 
+for the first time I faced errors related to scoping. I also had doubts regarding the usage of namespaces in header files 
+apart from the main implementation files which I resolved by discussing with my professor.
+
+One specific issue I faced with the File.h was that some of the functions used a parameter of type struct ShoppingRec 
+in their declarations. Initially, I included the header file ShoppingRec.h in File.h. Later, I used a forward declaration 
+of the struct as a workaround to comply with the workshop instructions.  
+
+Most functions in the DIY were simple but I had difficulty coding the strtr() function. The function is supposed to return 
+the address of the sub-string match upon success and a nullptr in case of an unsuccessful search. I initially declared a 
+char* as nullptr but it wouldn't let me insert the address into the variable. Eventually, I used a conditional expression 
+based on a flag(variable done in this case) in the return statement.
