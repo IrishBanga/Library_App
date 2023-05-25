@@ -1,0 +1,23 @@
+/*
+Name: Irish Banga
+Email: ibanga1@myseneca.ca
+Student ID: 112435227
+Completion Date: 2023-05-25
+
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*/
+
+REFLECTION
+
+The lab portion of this workshop introduced overloading functions and dynamic memory. I had various problems with the syntax 
+of dynamic memory allocation and deallocation as well as the logic related to the copying of employee name(s). These were 
+resolved upon discussion with my professor during the lab session.
+
+I had minor issues with the overloaded read() functions as well. Two of these functions received a reference of the 
+struct member variables as parameters. This was slightly different from passing their address(or pointers) so I had to refer 
+to the relevant notes to get it right.
+
+The DIY was very similar to the first part of the workshop and I built my solution on the same logic as before. I modified 
+the sort() function provided earlier to sort the struct(Population) city array based on the population of the postal codes 
+as well as the read() functions to match the record format in the PCPopulations.csv file.
+
