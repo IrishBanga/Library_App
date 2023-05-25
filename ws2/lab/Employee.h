@@ -11,7 +11,8 @@ I have done all the coding by myself and only copied the code that my professor 
 #define SDDS_EMPLOYEE_H_
 
 #define DATAFILE "employees.csv"
-namespace sdds {
+namespace sdds 
+{
     struct Employee {
         char* m_name;
         int m_empNo;
@@ -19,7 +20,7 @@ namespace sdds {
     };
 
     void sort();
-    bool load(Employee* emp);
+    bool load(Employee* empRec);
     bool load();
     void display();
     void deallocateMemory();

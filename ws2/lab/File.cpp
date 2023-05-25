@@ -11,7 +11,8 @@ I have done all the coding by myself and only copied the code that my professor 
 #include <cstdio>
 #include "File.h"
 
-namespace sdds {
+namespace sdds 
+{
    FILE* fptr;
    bool openFile(const char filename[]) 
    {

@@ -12,11 +12,13 @@ I have done all the coding by myself and only copied the code that my professor 
 #include "Employee.h"
 #include "File.h"
 using namespace std;
+
 namespace sdds 
 {
    int noOfEmployees;
    Employee* employees;
-   void sort() {
+   void sort() 
+   {
       int i, j;
       Employee temp;
       for (i = noOfEmployees - 1; i > 0; i--) {
@@ -30,20 +32,21 @@ namespace sdds
       }
    }
 
-   bool load(Employee* employ) 
+   bool load(Employee* recEmployee) 
    {
       bool ok = false;
       char name[128];
-      if (read(employ->m_empNo) && read(employ->m_salary) && read(name))
+      if (read(recEmployee->m_empNo) && read(recEmployee->m_salary) && read(name))
       { 
-          employ->m_name = new char[strLen(name) + 1];
-          strCpy(employ->m_name, name);
+          recEmployee->m_name = new char[strLen(name) + 1];
+          strCpy(recEmployee->m_name, name);
          ok = true;
       }
       return ok;
    }
    
-   bool load() {
+   bool load() 
+   {
       bool ok = false;
       if (openFile(DATAFILE)) 
       {
