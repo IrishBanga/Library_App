@@ -101,7 +101,12 @@ namespace sdds
         {
             for (int i = 0; i < m_noOfItems; i++)
             {
-                checks=m_items[i].isValid();
+                bool valid = true;
+                valid = m_items[i].isValid();
+                if (!valid)
+                {
+                    checks = false;
+                }
             }
         }
         return checks;
