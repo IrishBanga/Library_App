@@ -1,0 +1,29 @@
+/*
+Name: Irish Banga
+Email: ibanga1@myseneca.ca
+Student ID: 112435227
+Completion Date: 2023-06-01
+
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*/
+
+REFLECTION
+
+The lab portion of the workshop had multiple functions each performing a very specific but minor task 
+making it easier to code. However, the display functions used a fill character due to which 
+I had to use the ostream function fill(). To maintain consistency with output generation statements I 
+used similar functions such as width(), precision(), etc. instead of printf() statements.
+
+I faced problems with isValid() functions, causing errors in validation. The Item::isValid() function 
+had improper checks for the data members. Although my code passed the submitter tests, I identified 
+an error in my Bill::isValid() function logic which caused an invalid bill to be validated if the 
+last item in the Item objects array was valid. These were corrected in the latest submission for the lab.
+
+The DIY part logic was very similar to the lab portion. I only made some minor changes to function names. 
+The only problem I faced was that my program aligned the Food item name and meal time output statements 
+to the right (only when printing the testDMA() function output). The tester code in the main program 
+displayed the output correctly. I couldn’t figure out what caused this error. 
+
+The problem was discussed and resolved during the lab session. It stemmed from not calling the unsetf() 
+function to revert the changes we made while displaying specific data fields and also due to the 
+default(right) alignment set by the system. 
