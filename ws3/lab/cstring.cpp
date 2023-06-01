@@ -18,6 +18,9 @@ I have done all the coding by myself and only copied the code that my professor 
 
 namespace sdds
 {
+    /*
+    strCpy()- copies (src) string into (des) and null terminates it
+    */
     void strCpy(char* des, const char* src)
     {
         int size = strLen(src);
@@ -29,6 +32,9 @@ namespace sdds
         des[size] = '\0';
     }
     
+    /*
+    strnCpy()- copies (len) characters from (src) string into (des) and null terminates it
+    */
     void strnCpy(char* des, const char* src, int len)
     {
         int i;
@@ -49,13 +55,16 @@ namespace sdds
         des[i] = '\0';
     }
     
+    /*
+    strCmp()- compares (s1) and (s2) strings. Returns 0 if same. 1 if s1 > s2 and vice-versa.
+    */
     int strCmp(const char* s1, const char* s2)
     {
         int size_s1 = strLen(s1);
         int size_s2 = strLen(s2);
         int i;
         int res=0;
-        for (i = 0; i < ((size_s1 > size_s2) ? size_s2 : size_s1)&&res==0; i++)
+        for (i = 0; i < ((size_s1 > size_s2) ? size_s2 : size_s1)&&res==0; i++) //choosing smaller size from both to avoid memory access violations
         {
             if (s1[i] > s2[i])
             {
@@ -77,6 +86,9 @@ namespace sdds
         return res;
     }
     
+    /*
+    strnCmp()- compares (s1) and (s2) upto (len) characters. Returns 0 if same. 1 if s1 > s2 and vice-versa.
+    */
     int strnCmp(const char* s1, const char* s2, int len)
     {
         int i;
@@ -99,6 +111,9 @@ namespace sdds
         return res;
     }
     
+    /*
+    strLen()- returns the length of string
+    */
     int strLen(const char* s)
     {
         int i = 0;
@@ -109,6 +124,9 @@ namespace sdds
         return i;
     }
     
+    /*
+    strStr()- returns address of first occurence (str2) substring found in (str1), otherwise returns null
+    */
     const char* strStr(const char* str1, const char* str2)
     {
         int len = strLen(str1);
@@ -128,9 +146,12 @@ namespace sdds
                 }
             }
         }
-        return done ? str1 + index:nullptr;
+        return done ? str1 + index:nullptr;  //returning address of substring or nullptr based on the flag(done) in logic
     }
     
+    /*
+    strCat()- joins the (src) substring to (des) and null terminates it
+    */
     void strCat(char* des, const char* src)
     {
         int i = 0;
@@ -146,5 +167,4 @@ namespace sdds
         }
         des[i] = '\0';
     }
-
 }

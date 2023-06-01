@@ -13,6 +13,9 @@ I have done all the coding by myself and only copied the code that my professor 
 using namespace std;
 namespace sdds 
 {
+    /*
+    totalTax()- calculates the total tax amount by iterating through all the items
+    */
     double Bill::totalTax() const
     {
         double total = 0;
@@ -23,6 +26,9 @@ namespace sdds
         return total;
     }
 
+    /*
+    totalPrice()- calculates the total amount by iterating through all the items
+    */
     double Bill::totalPrice() const
     {
         double total = 0;
@@ -33,6 +39,9 @@ namespace sdds
         return total;
     }
 
+    /*
+    Title()- used to print a title for the bill based on validity of items in the bill 
+    */
     void Bill::Title() const
     {
         cout << "+--------------------------------------+" << endl;
@@ -52,6 +61,9 @@ namespace sdds
                 "+----------------------+---------+-----+" << endl;
     }
 
+    /*
+    footer()- used to print a footer for the bill based on validity of items in the bill
+    */
     void Bill::footer() const
     {
         cout << "+----------------------+---------+-----+" << endl;
@@ -76,12 +88,18 @@ namespace sdds
         cout << "+--------------------------------------+" << endl;
     }
 
+    /*
+    setEmpty()- sets the bill to an empty/safe state
+    */
     void Bill::setEmpty()
     {
         strCpy(m_title, "\0");
         m_items = nullptr;
     }
 
+    /*
+    isValid()- checks for the validity of the Bill data members and the Item objects array 
+    */
     bool Bill::isValid() const
     {
         bool checks = true;
@@ -89,7 +107,7 @@ namespace sdds
         {
             checks = false;
         }
-        else if (m_items == nullptr)
+        else if (m_items == nullptr)  //checking if the Item objects array is pointing to a valid memory address
         {
             checks = false;
         }
@@ -105,13 +123,16 @@ namespace sdds
                 valid = m_items[i].isValid();
                 if (!valid)
                 {
-                    checks = false;
+                    checks = false;  //setting the flag to false if any item in the bill is invalid
                 }
             }
         }
         return checks;
     }
 
+    /*
+    init()- used to initiate a valid Bill with the title(parameter) and allocating dynamic memory based on number of items 
+    */
     void Bill::init(const char* title, int noOfItems)
     {
         bool valid = true;
@@ -128,18 +149,21 @@ namespace sdds
             m_noOfItems = noOfItems;
             m_itemsAdded = 0;
             strnCpy(m_title, title, 36);
-            m_items = new Item[m_noOfItems];
+            m_items = new Item[m_noOfItems];  //allocating dynamic memory for array of Item objects
         }
         else
         {
-            setEmpty();
+            setEmpty(); //setting bill to empty state if the checks fail
         }
         for (int i = 0; i < m_noOfItems; i++)
         {
-            m_items[i].setEmpty();
+            m_items[i].setEmpty(); //setting all the Item array objects to an empty/safe state
         }
     }
 
+    /*
+    add()- adds an item to the Item objects array 
+    */
     bool Bill::add(const char* item_name, double price, bool taxed)
     {
         bool check = false;
@@ -153,6 +177,9 @@ namespace sdds
         return check;
     }
 
+    /*
+    display()- uses Title(),Item::display(), and, footer() functions to generate a bill
+    */
     void Bill::display() const
     {
         Title();
@@ -163,6 +190,9 @@ namespace sdds
         footer();
     }
 
+    /*
+    deallocate()- deallocates dynamic memory allocated in the program
+    */
     void Bill::deallocate()
     {
         delete[] m_items;

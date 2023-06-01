@@ -12,10 +12,10 @@ I have done all the coding by myself and only copied the code that my professor 
 #include "Item.h"
 namespace sdds {
    class Bill {
-      char m_title[37];
-      Item* m_items;
-      int m_noOfItems;
-      int m_itemsAdded;
+      char m_title[37];  // holds the title for a bill
+      Item* m_items; // a dynamic array for holding the Item objects
+      int m_noOfItems;  // used to allocate dynamic memory to the array of Item objects
+      int m_itemsAdded; // keeps track of items being added
       double totalTax()const;
       double totalPrice()const;
       void Title()const;
