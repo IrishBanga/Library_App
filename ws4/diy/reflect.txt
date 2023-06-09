@@ -1,0 +1,25 @@
+/*
+Name: Irish Banga
+Email: ibanga1@myseneca.ca
+Student ID: 112435227
+Completion Date: 2023-06-09
+
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*/
+
+REFLECTION
+
+The lab portion was implemented in a single class (Canister) and was easier compared to the DIY 
+part(implemented in two different classes).
+The lab portion had numerous and very specific instructions, some of which I overlooked while 
+developing my solution and it was difficult to get the correct output later. Also, I faced a lot of 
+memory-related issues with this workshop that were difficult to track. With the lab, I couldn’t 
+figure out the cause of 1 unallocated block at the end of my program. This was resolved by calling 
+the clear() function even before we allocated any new memory. It's a safe practice as all the Canister 
+contents were set to empty states using constructors at the initialization stage.
+With DIY, it was mostly minor errors, such as newline at the wrong place or off-by-one errors but took 
+a lot of time to fix. The major issue I faced was the corruption of HEAP memory, which I’d never 
+encountered before. I tried debugging the program and the error would show up only when the program 
+execution reached the deconstructor stages. Initially, I assumed my logic of memory deallocation was 
+wrong, but this was caused due to off-by-one logical error in copying label contents into the dynamic character array.
+
