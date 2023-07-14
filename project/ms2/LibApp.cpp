@@ -25,8 +25,7 @@ that my professor provided to complete my project milestones.
 using namespace std;
 namespace sdds 
 {    
-    LibApp::LibApp():m_mainMenu("Seneca Libray Application"), m_exitMenu("Changes have been made to the data, what would you like to do?")
-
+    LibApp::LibApp()
     {
         m_changed = false;
         m_mainMenu << "Add New Publication" << "Remove Publication" << "Checkout publication from library" << "Return publication to library";
