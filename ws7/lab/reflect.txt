@@ -1,0 +1,37 @@
+/*
+Name: Irish Banga
+Email: ibanga1@myseneca.ca
+Student ID: 112435227
+Completion Date: 2023-07-13
+
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*/
+
+REFLECTION - Workshop
+
+This workshop was comparatively easier and simple compared to the previous workshop.
+Both the classes had a few member functions with very simple implementation. I have also become more comfortable 
+using the global initialization method. I didn't face many issues with this workshop and only had minor issues 
+associated with accessing data members of the base class. These issues were overcome instantly with the error 
+messages from VS debugger.
+
+Other than that, I had minor issues while matching the output and addCargo() function requirements.
+
+REFLECTION - PROJECT MS1, MS2
+
+MS1
+The issue I faced with this milestone was getting the date input from the user(in the specified format). The instructions 
+stated using cin.ignore() function but I used a temporary character to store the separator or the digit(in case the user 
+entered the date with whitespaces). I used the ASCII values to determine if they were valid digits to make appropriate changes 
+to the input in date values.
+Also, I had to develop a helper function daysDiff() for my overloaded comparison operators as they couldn't access use the
+daysSince0001_1_1() function directly.
+
+The Menu class implementation was easy and the global initialization helped a lot.
+However, I faced issues with the destructor which caused memory leaks.
+
+MS2
+
+This milestone was similar to the current workshop, simple with clear and concise instructions.
+I initially had some doubts regarding the constructor of LibApp(), but was able to resolve them eventually.
+The suggested pseudo code provided in the instructions made it easier to implement the run() function used in the LibApp() class.
