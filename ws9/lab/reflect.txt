@@ -1,0 +1,37 @@
+/*
+Name: Irish Banga
+Email: ibanga1@myseneca.ca
+Student ID: 112435227
+Completion Date: 2023-07-28
+
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*/
+
+REFLECTION - Workshop
+
+Implementing this workshop, I faced some difficulties with understanding the limitations and the necessary operations in the functions.
+I made quite a few logical errors during the process and those were corrected one at a time with appropriate debugging procedure.
+
+This was also the first time we used protected members in Base classes. Although it is similar to using other functions, I am doubtful
+about how I have used the overloaded index operator[] in the derived class HtmlText::write() function.
+
+Initially, I didn't include the read function in the Text constructor due to which there was no output at all. Moving on, the way I coded 
+Text::read() function, it didn't read special characters after which I imitated the displayFile() logic from the tester program provided. 
+Apart from that, I had some logical errors in the way I implemented copy assignment operator and the index operator in HtmlText::write().
+
+
+REFLECTION - PROJECT MS4
+
+Building upon the previous milestone, we implemented the Book class in this part of the project. The implementation was very similar to
+the parent class(i.e., Publication) but with minor changes to some functions and I faced the same problems as the last milestone(i.e., 
+reading records). Besides that, I had to modify the way write functions were implemented in both these classes.
+
+Previously, I implemented those using the cout.width() method, but it didn't truncate the content to be printed. I did try to use <iomanip>
+to achieve the required results, but, at last, I used string manipulation to do so as I couldn't find an appropriate method within standard libraries. 
+
+As I mentioned before, the final implementation of mine read an incorrect number of records from the file. This time, however, the issue was
+reading and ignoring a newline character from the input stream. As the tester program also cleared newline characters from the stream, this 
+caused the program to skip over alternate records. This was corrected by using the get() method instead of getline().
+
+With the knowledge gained from the lectures this week, I believe my implementation of the bool operator in the Publication and Book class may 
+be faulty besides the resetDate() function(mentioned in previous reflection).
