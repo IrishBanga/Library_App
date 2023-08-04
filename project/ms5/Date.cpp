@@ -20,6 +20,11 @@ Date        Reason
             setToToday() functions
 2023/07/29  v2.1 - modified write() function to correct 
             alignment issues in printing date
+2023/08/04  v2.2 - modified read() function 
+                   (Author: Fardad Soleimanloo)
+                 - corrected comparison operators definitions
+                   removed daysDiff() helper function
+                   (Author: Irish Banga)
 -----------------------------------------------------------
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my project milestones.
@@ -140,15 +145,45 @@ namespace sdds
         return m_ErrorCode != 0;
     }
 
-    int Date::daysDiff() const
-    {
-        return this->daysSince0001_1_1();
-    }
-
     Date::operator bool() const
     {
         return !this->bad();
     }
+
+	bool Date::operator==(const Date& second)const
+	{
+		return(this->daysSince0001_1_1() == second.daysSince0001_1_1());
+	}
+
+	bool Date::operator!=(const Date& second)const
+	{
+		return!(*this == second);
+	}
+
+	bool Date::operator>=(const Date& second)const
+	{
+		return(this->daysSince0001_1_1() >= second.daysSince0001_1_1());
+	}
+
+	bool Date::operator<=(const Date& second)const
+	{
+		return(this->daysSince0001_1_1() <= second.daysSince0001_1_1());
+	}
+
+	bool Date::operator<(const Date& second)const
+	{
+		return(this->daysSince0001_1_1() < second.daysSince0001_1_1());
+	}
+
+	bool Date::operator>(const Date& second)const
+	{
+		return(this->daysSince0001_1_1() > second.daysSince0001_1_1());
+	}
+
+	int Date::operator-(const Date& second) const
+	{
+		return this->daysSince0001_1_1() - second.daysSince0001_1_1();
+	}
 
     ostream& operator<<(ostream& os, const Date& RO)
     {
@@ -163,10 +198,10 @@ namespace sdds
     istream& Date::read(istream& is)
     {
         m_ErrorCode = NO_ERROR;
-        is >> m_year; // 2023 10 10
-        is.ignore( );
+        is >> m_year;
+        is.ignore();
         is >> m_mon;
-        is.ignore( );
+        is.ignore();
         is >> m_day;
         if (is.fail())
         {
@@ -199,40 +234,5 @@ namespace sdds
             os << dateStatus();
         }
         return os;
-    }
-
-    bool operator==(const Date& first, const Date& second)
-    {
-        return (first.daysDiff() == second.daysDiff());
-    }
-
-    bool operator!=(const Date& first, const Date& second)
-    {
-        return !(first == second);
-    }
-
-    bool operator>=(const Date& first, const Date& second)
-    {
-        return (first.daysDiff() >= second.daysDiff());
-    }
-
-    bool operator<=(const Date& first, const Date& second)
-    {
-        return (first.daysDiff() <= second.daysDiff());
-    }
-
-    bool operator<(const Date& first, const Date& second)
-    {
-        return (first.daysDiff() < second.daysDiff());
-    }
-
-    bool operator>(const Date& first, const Date& second)
-    {
-        return (first.daysDiff() > second.daysDiff());
-    }
-
-    int operator-(const Date& first, const Date& second)
-    {
-        return(first.daysDiff() - second.daysDiff());
     }
 }

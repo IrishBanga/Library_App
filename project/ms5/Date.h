@@ -16,6 +16,8 @@ Date        Reason
 2023/07/08  Added declarations for operator overlaods and 
             helper, read, write functions (Author: Irish Banga)
 2023/07/21  v2 - added gloabal variables(per MS3 instructions)
+2023/08/04  v2.1 - corrected comparison operators declarations
+                   removed daysDiff() helper declaration
 -----------------------------------------------------------
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my project milestones.
@@ -61,19 +63,17 @@ namespace sdds
         const char* dateStatus()const; 
         int currentYear()const;
 
-        int daysDiff() const;
         operator bool() const;
+        bool operator==(const Date& second) const;
+        bool operator!=(const Date& second) const;
+        bool operator>=(const Date& second) const;
+        bool operator<=(const Date& second) const;
+        bool operator<(const Date& second) const;
+        bool operator>(const Date& second) const;
+        int operator-(const Date& second) const;
         std::istream& read(std::istream& is = std::cin);
         std::ostream& write(std::ostream& os = std::cout)const;
     };
-
-    bool operator==(const Date& first, const Date& second);
-    bool operator!=(const Date& first, const Date& second);
-    bool operator>=(const Date& first, const Date& second);
-    bool operator<=(const Date& first, const Date& second);
-    bool operator<(const Date& first, const Date& second);
-    bool operator>(const Date& first, const Date& second);
-    int operator-(const Date& first, const Date& second);
     std::ostream& operator<<(std::ostream& os, const Date& RO);
     std::istream& operator>>(std::istream& is, Date& RO);
 
