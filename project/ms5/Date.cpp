@@ -163,20 +163,11 @@ namespace sdds
     istream& Date::read(istream& is)
     {
         m_ErrorCode = NO_ERROR;
-        char temp = '\0';
-        is >> m_year;
-        is >> temp;
+        is >> m_year; // 2023 10 10
+        is.ignore( );
         is >> m_mon;
-        if ((int)temp >= 48 && (int)temp <= 57)
-        {
-            m_mon += ((int)(temp)-48) * 10;
-        }
-        is >> temp;
+        is.ignore( );
         is >> m_day;
-        if (int(temp) >= 48 && int(temp) <= 57)
-        {
-            m_day += ((int)(temp)-48) * 10;
-        }
         if (is.fail())
         {
             m_ErrorCode = CIN_FAILED;
@@ -186,7 +177,6 @@ namespace sdds
         {
             this->validate();
         }
-        is.clear();
         return is;
     }
 
