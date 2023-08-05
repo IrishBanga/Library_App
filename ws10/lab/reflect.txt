@@ -1,0 +1,41 @@
+/*
+Name: Irish Banga
+Email: ibanga1@myseneca.ca
+Student ID: 112435227
+Completion Date: 2023-08-05
+
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*/
+
+REFLECTION - Workshop
+
+Before working on this workshop, I read through the class notes to acquaint myself with how the templates work. As this was a new
+topic the lectures the class notes came in handy, especially for the search template, which uses two different data templated types.
+I did run into a few problems while developing this code. Similar to the modules we've developed throughout this course, initially, 
+I implemented both templates within serachNlist class, but eventually, I defined them directly in the module as the instructions 
+didn't specify so.
+
+Another major aspect of this workshop was the documentation for the templates. This was covered in detail during the last lab session
+which helped me properly highlight all the pre-conditions and assumptions for my templates.
+
+REFLECTION - PROJECT MS5
+
+For the final milestone submissions, we developed and modified the LibApp module we developed in Milestone 2.
+
+The major problem that I faced in this milestone was related to searching the records(either Books or Publications) correctly, and also
+the deallocation of memory. My initial implementation of search() function spanned more than 80 lines. I combined some of the nested 
+condition checks to simplify the function logic. I used the logic from the PublicationSelector tester to correctly allocate memory based on
+the user's choice of publication type. Other functions developed, were comparatively easier.
+I also included memory deallocation in the save() function, which gave me correct results up until MS56. This was when the user chooses
+to exit without saving. As a result, I moved the deallocation(done using deleteDMA() function) logic within the run function when they 
+choose to exit the function regardless of whether they made any changes or not. 
+
+The error/informative messages posed another challenge. Present in the major functions related to the functioning of the Library application 
+these differed minutely in whether or not a newline was added after them, causing output mismatch. For the same reason, I had to add alignment 
+specifications to print statements in some of the modules.
+
+A few changes were made to the Date module after a code review with my professor. My implementation of read() function was overly complicated
+which was significantly shortened as well as simplified by the suggested changes. Besides that, I had incorrectly defined the comparison 
+operators as helpers instead of member functions, which was also pointed out in the review session. This was corrected in the final submission.
+Modifications to the resetDate() function in the Publication class, and to bool operators in Publication and Book class were among the other changes 
+made.
